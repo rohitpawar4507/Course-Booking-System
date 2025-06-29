@@ -1,5 +1,5 @@
 import { CurrencyPipe, DatePipe } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-course-card',
@@ -9,12 +9,19 @@ import { Component, Input } from '@angular/core';
 })
 
 export class CourseCard {
-  @Input() course:any;
+  @Input() course?:any;
+  @Output() courseBooked = new EventEmitter<any>();
+  @Output() wishlistAdded = new EventEmitter<any>();
 
-  viewDetils(title: string): void{
-  alert(`Viewing details for ${title}`)
+  onBookCourse() : void{
+    this.courseBooked.emit(this.course);
+  }
+
+   onAddToWishlist() : void{
+    this.courseBooked.emit(this.course);
+  }
 }
-}
+
 
 
 
