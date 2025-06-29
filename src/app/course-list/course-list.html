@@ -1,0 +1,37 @@
+<!--
+Static data 
+
+<h2>Avilable Courses</h2>
+<div class="course-item">
+    <h3>Introduction to Angular</h3>
+    <p>Learn angular in this course.</p>
+    <p>100</p>
+    <p>02-01-2025</p>
+    <button>View Details</button>
+</div>
+
+<div class="course-item">
+    <h3>Advanced Angular</h3>
+    <p>Take your Angular skills to the next level.</p>
+    <p>180</p>
+    <p>02-01-2025</p>
+    <button>View Details</button>
+</div>
+
+<div class="course-item">
+    <h3>Introduction to Angular</h3>
+    <p>Learn angular in this course.</p>
+    <p>100</p>
+    <p>02-01-2025</p>
+    <button>View Details</button>
+</div> -->
+
+<!-- Using Data binding concept - it update the data dyanmically-->
+<h2>{{title}}</h2>
+
+@for (course of courses; track course.id) {
+<app-course-card [course]="course"></app-course-card>
+
+}
+
+
